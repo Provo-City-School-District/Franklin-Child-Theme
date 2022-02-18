@@ -32,26 +32,20 @@ function get_excerpt(){
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 	$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
 	$excerpt = '<p>'.$excerpt.'...'.'</p>';
-
 	return $excerpt;
 }
 /*==========================================================================================
 // custom Login Page
 ============================================================================================*/
 function my_custom_login() {
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
 }
 add_action('login_head', 'my_custom_login');
-
 function my_login_logo_url() {
-return get_bloginfo( 'url' );
+	return get_bloginfo( 'url' );
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
-
 function my_login_logo_url_title() {
-return 'Elem School | Provo City School District';
+	return 'Elem School | Provo City School District';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
-/*==========================================================================================
-// ShortCodes
-============================================================================================*/
